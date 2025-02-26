@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+background-color: #2f329d;
+}
+
+
+.getintouch{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.body {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(-5%); }
+  50% { transform: translateY(5%); }
+}
+
+.item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  object-fit: cover;
+}
+
+.square { border-radius: 50%; }
+.circle { border-radius: 50%; }
+.triangle { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+.diamond { clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+
+.exit-left {
+  transform: translateX(-150%);
+  opacity: 0;
+}
+
+.exit-right {
+  transform: translateX(150%);
+  opacity: 0;
+}
+
+.enter-from-left {
+  transform: translateX(-150%);
+  animation: enterLeft 0.6s forwards;
+}
+
+.enter-from-right {
+  transform: translateX(150%);
+  animation: enterRight 0.6s forwards;
+}
+
+@keyframes enterLeft {
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes enterRight {
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.navigation {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+.navigation button {
+  background: #333;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.navigation button:hover {
+  background: #555;
+}
+</style>
+</head>
+<body>
+  <div class="Get in Touch"><h1>Get in Touch</h1></div>
+  <div class="body">
+  <div class="container">
+      <div class="item-container">
+        <img class="item square" src="Our Social media.png">
+    </div>
+      <div class="navigation">
+      <button onclick="switchItem('left')">←</button>
+      <button onclick="switchItem('right')">→</button>
+    </div>
+    </div>
+  </div>
+<script>
+const items = [
+  {img: 'Facebook.png', shape: 'circle'},
+  {img: 'Instagram.png', shape: 'circle'},
+  {img: 'Linkedin 1.jpg', shape: 'circle'},
+  {img: 'X_logo.jpg', shape: 'circle'}
+];
+
+let currentIndex = 0;
+const container = document.querySelector('.item-container');
+let currentItem = container.querySelector('.item');
+let isAnimating = false;
+
+function createNewItem(shape, imgUrl) {
+  const newItem = document.createElement('img');
+  newItem.className = `item ${shape}`;
+  newItem.src = imgUrl;
+  return newItem;
+}
+
+function switchItem(direction) {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  currentItem.classList.add(direction === 'left' ? 'exit-left' : 'exit-right');
+
+  setTimeout(() => {
+    currentItem.remove();
+    currentIndex = (currentIndex + (direction === 'left' ? -1 : 1) + items.length) % items.length;
+    const nextItem = items[currentIndex];
+    const newItem = createNewItem(nextItem.shape, nextItem.img);
+    newItem.classList.add(direction === 'left' ? 'enter-from-right' : 'enter-from-left');
+    container.appendChild(newItem);
+    currentItem = newItem;
+    isAnimating = false;
+  }, 600);
+}
+
+document.addEventListener('keydown', (e) => {
+  if (['ArrowLeft', 'ArrowRight'].includes(e.key)) {
+    switchItem(e.key.replace('Arrow', '').toLowerCase());
+  }
+});
+</script>
+</body>
+</html>
