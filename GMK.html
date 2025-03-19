@@ -9,6 +9,15 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Sticky Header Example</title>
             <link rel="stylesheet" href="styles.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Footer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <style>
                 
     
@@ -17,7 +26,8 @@
                 padding: 0;
                 }
                 body {
-                background-image: url('Screenshot 2025-03-13 192822.png');
+                background-image: url('Screenshot 2025-03-04 090049');
+                border-radius: 100%;
                 }
     
                 .body {
@@ -26,7 +36,7 @@
                     background-image: url(Screenshot 2025-03-04 090049);
                 }
                 body {
-                    background-image: url("Screenshot 2025-03-13 192822.png");
+                    background-image: url("Screenshot 2025-03-04 090049.png");
                     height: 100%; 
                     background-position: center;
                     background-repeat: no-repeat;
@@ -148,10 +158,327 @@
             margin-right: 20%;
             font-size: 20px;
         }
-        body {
+        .alamat {
+            background-color: #ffffff;
+        }
+        .lokasi {
+            width: 1800px;
+            height: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 20px;
+        }
+
+        .judul {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 50px;
+            color: black;
+        }
+
+        .kiri {
+            margin-left: 15%;
+            margin-inline-end: 750px;
+            color: black;
+        }
+
+        .nomor {
+            margin-right: 15%;
+            color: black;
+        }
+
+        .surel {
+            margin-right: 15%;
+            color: black;
+        }
+        /*kntlgetintouch*/
+        .sosmed {
+        background-color: #2f329d;
+        }
+
+
+.GetinTouch{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  font-family: montserrat;
+  color: white;
+  padding-top: 100p;
+ 
 
 }
 
+
+.body {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 7vh;
+  margin: 0;
+  padding-top: -100px;
+}
+
+.container {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  animation: float 3s ease-in-out infinite;
+  padding-top: -50px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(-5%); }
+  50% { transform: translateY(5%); }
+}
+
+.item {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.square { border-radius: 50%; }
+.circle { border-radius: 50%; }
+.triangle { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+.diamond { clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+
+.exit-left {
+  transform: translateX(-150%);
+  opacity: 0;
+}
+
+.exit-right {
+  transform: translateX(150%);
+  opacity: 0;
+}
+
+.enter-from-left {
+  transform: translateX(-150%);
+  animation: enterLeft 0.6s forwards;
+}
+
+.enter-from-right {
+  transform: translateX(150%);
+  animation: enterRight 0.6s forwards;
+}
+
+@keyframes enterLeft {
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes enterRight {
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.navigation {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.navigation button {
+  background: #ffffff;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 35%;
+  font-size: 25px;
+
+}
+
+.navigation button:hover {
+  background: #555;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+/*nextfooter*/
+
+footer {
+    position: sticky;
+    bottom: 0;
+}
+
+.footer {
+    background-color: #FAFAFF;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 50px 50px 60px 50px;
+    margin-top: 80px;
+    height: 47%;
+}
+
+.footer .footer-left,
+.footer .footer-center,
+.footer .footer-right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+@media (max-height:800px) {
+    footer {
+        position: static;
+    }
+
+    header {
+        padding-top: 40px;
+    }
+}
+
+.footer .footer-left {
+    width: 30%;
+}
+
+.footer h3 {
+    color: #853b3b;
+    margin: 0;
+    padding-bottom: 20px;
+    font-family: Georgia, 'Time New Roman', Times, serif;
+}
+
+.footer .footer-left img {
+    width: 25%;
+    vertical-align: middle;
+}
+
+.footer .footer-left .credit-cards {
+    width: 100%;
+}
+
+.footer .footer-copyright {
+    color: #000000;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+    padding-top: 10%;
+}
+
+.footer .footer-center {
+    width: 35%;
+}
+
+.footer .footer-center i {
+    background-color: #2c3335;
+    color: red;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer .footer-center i.fa-envelope {
+    font-size: 17px;
+    line-height: 38px;
+}
+
+.footer .footer-center p {
+    display: inline-block;
+    color: black;
+    vertical-align: middle;
+    margin: 0px;
+}
+
+.footer .footer-center p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer .footer-center p a {
+    color: rgb(22, 255, 177);
+    text-decoration: none;
+}
+
+.footer .footer-right {
+    width: 30%;
+}
+
+.footer .footer-about {
+    line-height: 20px;
+    color: #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0px;
+}
+
+.footer .footer-about span {
+    display: block;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer .footer-media {
+    margin-top: 25px;
+}
+
+.footer .footer-media a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background-color: #2c2b2b;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fffefe;
+    text-align: center;
+    line-height: 50px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+.footer .footer-media a:hover {
+    background-color: rgb(0, 122, 82);
+}
+
+        @media (max-width: 880px) {
+
+            .footer .footer-left,
+            .footer .footer-center,
+            .footer .footer-right {
+                display: block;
+                width: 100%;
+                margin-bottom: 40px;
+                text-align: left;
+            }
+
+            .footer .footer-center i {
+                margin-left: 0px;
+            }
+
+        }
+        .Middle{
+            border-radius: 50px;
+        }
                 
                 </style>
         </head>
@@ -195,10 +522,10 @@
 
         <div>
            <br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
         <div>
-            <img src="apakek1.png" alt="">
+            <img src="apakek1.png" alt="" style="display:flex; margin-left: 360px;">
         </div>
         <div class="gallery">
         <div class="slideshow-container">
@@ -264,6 +591,7 @@
         <div class="Foot">
           
     </div>
+    <br><br><br><br><br><br>
         <script>
             var slideIndex = 1;
             showSlides(slideIndex);
@@ -287,10 +615,126 @@
                 slides[slideIndex-1].style.display = "block";
             }
             setInterval(function(){ plusSlides(1) }, 5000);
+
+            const items = [
+            {img: 'Facebook.png', shape: 'circle'},
+            {img: 'Instagram.png', shape: 'circle'},
+            {img: 'Linkedin 1.jpg', shape: 'circle'},
+            {img: 'X_logo.jpg', shape: 'circle'}
+            ];
+
+            let currentIndex = 0;
+            const container = document.querySelector('.item-container');
+            let currentItem = container.querySelector('.item');
+            let isAnimating = false;
+
+            function createNewItem(shape, imgUrl) {
+            const newItem = document.createElement('img');
+            newItem.className = `item ${shape}`;
+            newItem.src = imgUrl;
+            return newItem;
+            }
+
+            function switchItem(direction) {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            currentItem.classList.add(direction === 'left' ? 'exit-left' : 'exit-right');
+
+            setTimeout(() => {
+                currentItem.remove();
+                currentIndex = (currentIndex + (direction === 'left' ? -1 : 1) + items.length) % items.length;
+                const nextItem = items[currentIndex];
+                const newItem = createNewItem(nextItem.shape, nextItem.img);
+                newItem.classList.add(direction === 'left' ? 'enter-from-right' : 'enter-from-left');
+                container.appendChild(newItem);
+                currentItem = newItem;
+                isAnimating = false;
+            }, 600);
+            }
+
+            document.addEventListener('keydown', (e) => {
+            if (['ArrowLeft', 'ArrowRight'].includes(e.key)) {
+                switchItem(e.key.replace('Arrow', '').toLowerCase());
+            }
+            });
+        
         </script>
-        
-        
-        
+        <div class="alamat">       
+            <body style="border-radius: 50px;">
+                <br><br><br><br>
+                <img src="Lokasi.png" alt="gambar alamat" class="lokasi"> <br>
+                <h1 align="center" class="judul"><b>PT GLOBAL MEDIA KREATIF</b></h1>
+                <p class="nomor" align="right">+62 21 9876 5432 </p>
+                <p class="surel" align="right">info@globalmediakreatif.co.id</p>
+                <p class="kiri" align="left">Jl. Kreatif No. 34 Bisnis Media Jakarta 10340, Indonesia</p>
+            </body>
+           
+        </div> 
         </body>
+        
+        
+        <div class="sosmed">
+            <body>
+                <div class="GetinTouch"><h1>GET IN TOUCH</h1></div>
+                <div class="body">
+                <div class="container">
+                    <div class="item-container">
+                      <img class="item" src="Our Social media.png" >
+                  </div>
+                    <div class="navigation">
+                    <button onclick="switchItem('left')">←</button>
+                    <button onclick="switchItem('right')">→</button>
+                  </div>
+                  </div>
+                </div>
+            </body>
+        </div>
+
+        <div>
+            <footer class="footer">
+                <div class="footer-left">
+                   
+                    <div class="credit-cards">
+                        <img src="GMK logo.png" alt="">
+                        <img src="mastercard-removebg-preview.png" alt="">
+                        <img src="paypal.png" alt="">
+                    </div>
+                    <p class="footer-copyright">2025 &copy; GMK</p>
+                </div>
+        
+                <div class="footer-center">
+                    <div>
+                        <i class="fa fa-map-marker"></i>
+                        <p><span>Indonesia</span> Jakarta, Jakarta Selatan</p>
+                    </div>
+                    <div>
+                        <i class="fa fa-phone"></i>
+                        <p>+62 077-777-77</p>
+                    </div>
+                    <div>
+                        <i class="fa fa-envelope"></i>
+                        <p><a href="#">info@globalmediakreatif.co.id</a></p>
+                    </div>
+                </div>
+        
+                <div class="footer-right">
+                    <p class="footer-about">
+                        <span>About</span>
+                        Di Channel ini kita akan berbagi barbagai Tutorial design, Pemograman dan lain-lain. Silahkan subscribe untuk kemajuan channel ini, jangan lupa, like dan comments. agar channel ini semakin berkembang
+                    </p>
+        
+                    <div class="footer-media">
+                        <a href="#"><i class="fa fa-youtube"></i></a>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+        
+            </footer>
+        </div>
+
     </html>
     </doctype>
